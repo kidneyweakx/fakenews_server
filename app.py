@@ -23,14 +23,14 @@ def upload_image():
             image.save(path)
             txt = tesseract.ocr(path)
             print(txt)
-            return redirect(request.url)
+            return txt
     return render_template("upload.html")
 
 if __name__ == '__main__':
-    import os
-    HOST = os.environ.get('SERVER_HOST', 'localhost')
-    try:
-        PORT = int(os.environ.get('SERVER_PORT', '5555'))
-    except ValueError:
-        PORT = 5555
-    app.run(HOST, PORT)
+    app.run(host = '0.0.0.0', port = 5555) 
+#    HOST = os.environ.get('SERVER_HOST', 'localhost')
+#    try:
+#        PORT = int(os.environ.get('SERVER_PORT', '5555'))
+#    except ValueError:
+#        PORT = 5555
+#    app.run(HOST, PORT)
