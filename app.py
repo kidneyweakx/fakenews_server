@@ -27,10 +27,10 @@ def upload_image():
     return render_template("upload.html")
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = 5555) 
-#    HOST = os.environ.get('SERVER_HOST', 'localhost')
-#    try:
-#        PORT = int(os.environ.get('SERVER_PORT', '5555'))
-#    except ValueError:
-#        PORT = 5555
-#    app.run(HOST, PORT)
+#    app.run(host = '0.0.0.0', port = 5555) 
+    HOST = os.environ.get('SERVER_HOST', 'localhost')
+    try:
+        PORT = int(os.environ.get('SERVER_PORT', '5555'))
+    except ValueError:
+        PORT = 5555
+    app.run(HOST, PORT)
