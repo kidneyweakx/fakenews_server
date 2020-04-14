@@ -343,3 +343,4 @@ image/*.png
 image/*.jpg
 data/*.csv
 data/*.txt
+.vscode
