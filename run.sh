@@ -1,1 +1,2 @@
-python3 flairs_spam.py
+# run flask server
+python3 app.py
