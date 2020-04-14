@@ -29,6 +29,7 @@
   <ItemGroup>
     <Compile Include="app.py" />
     <Compile Include="compare.py" />
+    <Compile Include="ispam.py" />
     <Compile Include="similar.py" />
     <Compile Include="tesseract.py" />
   </ItemGroup>

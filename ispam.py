@@ -7,4 +7,4 @@ def spamcleaner(text):
     sentence = Sentence(text)
     classifier.predict(sentence)
     print(sentence.labels)
-    return(sentence.labels)
+    return(str(sentence.labels))
