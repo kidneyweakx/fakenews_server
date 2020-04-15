@@ -344,3 +344,4 @@ image/*.jpg
 data/*.csv
 data/*.txt
 .vscode
+venv/
