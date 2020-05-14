@@ -3,6 +3,8 @@ from flair.embeddings import WordEmbeddings, FlairEmbeddings, DocumentLSTMEmbedd
 from flair.models import TextClassifier
 from flair.trainers import ModelTrainer
 from pathlib import Path
+import flair, torch
+flair.device = torch.device('cpu')
 # load training data
 corpus = NLPTaskDataFetcher.load_classification_corpus(Path('./data/'), test_file='train.csv', dev_file='dev.csv', train_file='test.csv')
 # word embeddings (fasttext format)
