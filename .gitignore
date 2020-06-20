@@ -339,9 +339,15 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-image/*.png
-image/*.jpg
-data/*.csv
-data/*.txt
+# Enviroment and Setting config
 .vscode
 venv/
+
+# User upload images place
+image/*
+
+# Training data and Model
+utils/data/*.csv
+utils/data/*.txt
+utils/model/*
+model/*
