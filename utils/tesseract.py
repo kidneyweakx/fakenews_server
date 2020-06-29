@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 import pytesseract
-from utils import ispam
+from utils import ispam, similar
 
 # tesseract 安裝路徑 (windows 問題)
 pytesseract.pytesseract.tesseract_cmd = 'D:\\Program Files\\Tesseract-OCR\\tesseract.exe'
@@ -12,6 +12,6 @@ def ocr(path):
     text = pytesseract.image_to_string(img, lang='chi_tra')
     print('tesseract text :',text)
     # 辨識垃圾訊息
-    spam=ispam.spamcleaner(text)
-    return(spam)
+    truth=similar.classifier(text)
+    return(truth)
 
