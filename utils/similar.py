@@ -13,6 +13,13 @@ def classifier(text) :
         dfp = nlp(df['paragraph'][i])
         similarity = ocrp.similarity(dfp)
         #print(similarity)
-        if(similarity > 0.9 and df['label'][i]=='__label__fake'):
-            return('fake news')
-        else : return('UNKNOWN')
+        if(similarity > 0.9):
+            label = df['label'][i]
+            if label == '__label__fake': return('FakeNews')
+            elif label == '__label__undefined': return('Undefined')
+            break
+
+    return('UNKNOWN')
+
+if __name__ == "__main__":
+    print(classifier('楊梅是皮蛇（帶狀皰疹）的尅星...10分鐘驗完血後，女醫生確定是得了帶狀皰疹...吃了兩天的楊梅後，居然神經不痛康復了'))
