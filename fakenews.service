@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve fakenews
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/workspace/fakenews/
+Environment="PATH=/home/ubuntu/workspace/fakenews/venv/bin"
+ExecStart=/home/ubuntu/workspace/fakenews/venv/bin/uwsgi --ini uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target
