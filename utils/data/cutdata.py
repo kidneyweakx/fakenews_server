@@ -1,3 +1,4 @@
+# 訓練模型切資料檔案
 import pandas as pd
 # append label
 #data = pd.read_csv("./spam.csv", encoding='latin-1').sample(frac=1).drop_duplicates()
