@@ -1,15 +1,19 @@
 # Fakenews OCR Detect 
 *使用前請先閱讀該文件!!!!!*
 
-### 基本說明
+### 📎 基本說明
 可使用圖片轉文字來偵測假新聞的伺服器實作。
 
 [範例網站](https://kidneyweakx.nctu.me/)
 
 ### 🛠 開發環境
 - **IDE**: Visual Studio 2019 or VScode
-- **Python**: version 3.7.6
+- **Python**: Python 3.7.6 :: Anaconda, Inc on Win32
 - **如果你是Linux環境**: 執行該檔案完成環境建置 [aptrequired.sh](./aptrequired.sh)
+```[shell]
+# 在終端機中執行該行指令
+bash aptrequired.sh
+```
 
 ### 📜 功能列表
 - Flask Server
@@ -18,19 +22,22 @@
     - [ ] 圖形介面
     - [ ] CSS美化  
 - Tesseract
-    - [x] 圖片轉文字(OCR)功能 
+    - [x] [圖片轉文字(OCR)功能](./utils/tesseract.py)
 - Texts Compare
-    - [x] <del>Flairs Model</del>
+    - [x] [<del>Flairs Model</del>](./archives/ispam.py)
     - [ ]  SpaCy 相似度比對
-    - [x] 假新聞比對
-    - [ ] 真新聞比對
+        - [x] [假新聞比對](./utils/similar.py)
+        - [ ] 真新聞比對
+    - [ ] (備案) 假新聞辨識模型
 - Crawl
     - [x] 爬取新聞資料
     - [ ] 自動爬取新增資料
     - [ ] 將爬取資料匯入資料庫且固定IP
 - Deploy
+    - [x] [UWSGI 部屬](./uwsgi.ini)
+    - [x] [Nginx 反向代理](./nginxsetting.txt)
     - [x] AWS EC2 上線
-    - [x] HTTPS
+    - [x] HTTPS 安全性
     - [ ] 穩定度測試 
 
 
@@ -58,7 +65,8 @@ python -m spacy download zh_core_web_sm
 python app.py
 ```
 
-### 依賴套件
+### 🔧 依賴套件
+*主要運用這些套件*
 - [伺服器Flask](https://flask.palletsprojects.com/)
 - [NLP套件SpaCy](https://spacy.io/)
 - [OCR套件Tesseract](https://github.com/tesseract-ocr/tesseract/wiki)

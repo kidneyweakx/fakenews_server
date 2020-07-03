@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 import pytesseract
-from utils import ispam, similar
+from utils import similar
 
 # tesseract 安裝路徑 (windows 問題)
 pytesseract.pytesseract.tesseract_cmd = 'D:\\Program Files\\Tesseract-OCR\\tesseract.exe'
