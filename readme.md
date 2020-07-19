@@ -31,7 +31,7 @@ bash aptrequired.sh
     - [ ] (備案) 假新聞辨識模型
 - Crawl
     - [x] 爬取新聞資料
-    - [ ] 自動爬取新增資料
+    - [x] 自動爬取新增資料
     - [ ] 將爬取資料匯入資料庫且固定IP
 - Deploy
     - [x] [UWSGI 部屬](./uwsgi.ini)

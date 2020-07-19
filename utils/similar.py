@@ -22,6 +22,7 @@ def classifier(text) :
             label = df['label'][i]
             if label == '__label__fake': return('FakeNews')
             elif label == '__label__undefined': return('Undefined')
+            elif label == '__label__true': return('truenews')
             break
 
     return('UNKNOWN')
