@@ -2,27 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Is it a Fakenews?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--RWD Setting-->
+    <meta name="keywords" content="Anti-Fakenews" />
+    <meta name="description" content="A Website to Spot Whether the News Is Fake" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="static/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
-    <title>Upload</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" />
+    <link href="static/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        <!--RWD Setting Contents-->
+    </style>
 </head>
 
 <body>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-
-        <div class="form-group">
-            <label>Select image</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" name="image" id="image">
-                <label class="custom-file-label" for="image">Select image...</label>
+    <!----------------------------------------------------------------- Header Wrapper ----------------------------------------------------------------->
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="logo">
+                <h1><a href="/">FakeNews</a></h1>
+            </div>
+            <div class="menu">
+                <ul class="drop-down-menu">
+                    <li class="current_page_item"><a href="/" accesskey="1" title="">關於我們</a></li>
+                    <li class="current_page_item"><a href="upload" accesskey="2" title="">辨識假新聞</a></li>
+                </ul>
             </div>
         </div>
+        <div>
+            <p>_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</p>
+        </div>
+    </div>
+    <!------------------------------------------------------------------ Main Article ------------------------------------------------------------------>
+    <div id="content">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div>
+                <label class="label-title">Select image</label>
+                <div class="custom-image-label">
+                    <label for="image">Select image...</label>
+                </div>
+                <div class="file-input-button">選擇檔案
+                    <input type="file" name="image" id="image">
+                </div>
+            </div>
 
-        <button type="submit" class="btn btn-primary">Upload</button>
-    </form>
+            <div class="upload-area">
+                <button type="submit">傳送檔案</button>
+            </div>
+
+            <div class="circle-in-red">
+                <div class="hover-red">Fake</div>
+            </div>
+            <div class="circle-in-yellow">
+                <div class="hover-yellow">Unkwn.</div>
+            </div>
+            <div class="circle-in-green">
+                <div class="hover-green">Real</div>
+            </div>
+        </form>
+    </div>
+    <!------------------------------------------------------------------- Copyright -------------------------------------------------------------------->
+    <div id="copyright">
+        <div>
+            <p>_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</p>
+        </div>
+        <div>
+            <label>@Copyright 2020</label>
+        </div>
+    </div>
 </body>
 
 </html>
