@@ -38,7 +38,31 @@
 </div>
 <!------------------------------------------------------------------ Main Article ------------------------------------------------------------------>
 <div id="content">
-	<label class="label-title">About Us</label>
+	<form action="/upload" method="POST" enctype="multipart/form-data">
+        <div>
+            <label class="label-title">Select image</label>
+			<div class="custom-image-label">
+				<label for="image">Select image...</label>
+            </div>
+			<div class="file-input-button">選擇檔案
+				<input type="file" name="image" id="image">
+            </div>
+        </div>
+		
+		<div class="upload-area">
+			<button type="submit">傳送檔案</button>
+		</div>
+		
+		<div class="circle-in-red">
+			<div class="hover-red">Fake</div>
+		</div>
+		<div class="circle-in-yellow">
+			<div class="hover-yellow">Unkwn.</div>
+		</div>
+		<div class="circle-in-green">
+			<div class="hover-green">Real</div>
+		</div>
+	</form>
 </div>
 <!------------------------------------------------------------------- Copyright -------------------------------------------------------------------->
 <div id="copyright">
