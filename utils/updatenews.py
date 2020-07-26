@@ -69,13 +69,14 @@ def addC(t):
 def output(df, method):
     for url in df['url']:
          getContent(url, 99)
+    df['content'] = content_list 
     # CSV
     if  method=='csv':
         path = ""
         df.to_csv(path + 'newsdata.csv', encoding='utf_8_sig', index=False, header=False)
     """ # SQL
     elif method=='sql':
-        df['content'] = content_list.astype(str) 
+        df['content'] = df['content'].astype(str) 
         engine = create_engine('mysql+pymysql://root:@localhost:3306/newsdata')
         df.to_sql('newsdata', engine, if_exists = 'append')
     """
