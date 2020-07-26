@@ -21,7 +21,7 @@ bash aptrequired.sh
     - [x] [上傳圖片](./templates/upload.html)
     - [x] 圖形介面
     - [x] CSS美化
-    - [ ] 返回假新聞回饋功能 
+    - [x] 返回假新聞回饋功能 
 - Tesseract
     - [x] [圖片轉文字(OCR)功能](./utils/tesseract.py)
 - Texts Compare

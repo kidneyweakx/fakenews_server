@@ -20,8 +20,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- CSS theme -->
-    <link href="../static/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="static/default.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- <link href="fonts.css" rel="stylesheet" type="text/css" media="all" /> -->
     <style>
 
     </style>
@@ -35,12 +35,12 @@
 
     <!-- Navbar color changed -->
     <script>
-        $(window).scroll(function(){
+        $(window).scroll(function() {
             $('nav').toggleClass('scrolled', $(this).scrollTop() > 200);
             $('nav a').toggleClass('scrolled', $(this).scrollTop() > 200);
         });
 
-        function showFilename(file){
+        function showFilename(file) {
             $("#filename_label").html(file.name);
         };
     </script>
@@ -50,45 +50,54 @@
     <!-- header -->
     <!-- navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-black fixed-top shadow navbar-cc">
-        <a class="navbar-brand" href="./index.html">FakeNews</a>           
+        <a class="navbar-brand" href="/">FakeNews</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDiv" aria-controls="navbarDiv" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarDiv">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"  data-toggle="collapse" data-target=".navbar-collapse.show">
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                     <a class="nav-link" href="#check">辨識假新聞</a>
                 </li>
-                <li class="nav-item"  data-toggle="collapse" data-target=".navbar-collapse.show">
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                     <a class="nav-link" href="#how">如何辨識</a>
                 </li>
             </ul>
-        </div> 
-    </nav>  
+        </div>
+    </nav>
 
     <!-- Content -->
     <div id="content">
+        {% if value == "" %}
         <form class="md-form" action="/upload" method="POST" enctype="multipart/form-data">
             <div class="banner-goal" id="check">
                 <div class="text-center">選擇檔案</div>
                 <div class="custom-file">
-                    <input onchange="showFilename(this.files[0])" type="file" class="custom-file-input" id="customFile">
-                    <label id="filename_label"  class="custom-file-label" for="customFile">jpg/png</label>
+                    <input onchange="showFilename(this.files[0])" type="file" name="image" class="custom-file-input" id="customFile">
+                    <label id="filename_label" class="custom-file-label" for="customFile">jpg/png</label>
                 </div>
                 <div class="align-middle text-center">
                     <button type="submit" class="btn btn-primary">上傳檔案</button>
                 </div>
-                <p class="label-title">結果：</p>
             </div>
         </form>
+        {% else %}
+        <div class="banner-goal" id="check">
+            <p class="label-title">結果: {{ value }}</p>
+            {% if value == "FakeNews" %} 假新聞確定 {% elif value == "Undefined" %} 未確認 {% endif %}
+        </div>
+
+        {% endif %}
         <div class="banner-how" id="how">
             <div class="container h-100 ">
-                <div class="align-middle text-center">如何辨識</div>
-                <div class="align-middle text-center"><p>如果圖片中的內容為假新聞，將會顯示以下畫面</p></div>
+                <div class="align-middle text-center">如何辨識{{ vlaue }}</div>
+                <div class="align-middle text-center">
+                    <p>如果圖片中的內容為假新聞，將會顯示以下畫面</p>
+                </div>
             </div>
         </div>
     </div>
-    
+
 </body>
 
 <!-- Footer -->
