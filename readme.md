@@ -19,8 +19,9 @@ bash aptrequired.sh
 - Flask Server
     - [x] [主畫面](./templates/index.html)
     - [x] [上傳圖片](./templates/upload.html)
-    - [ ] 圖形介面
-    - [ ] CSS美化  
+    - [x] 圖形介面
+    - [x] CSS美化
+    - [x] 返回假新聞回饋功能 
 - Tesseract
     - [x] [圖片轉文字(OCR)功能](./utils/tesseract.py)
 - Texts Compare
@@ -28,7 +29,8 @@ bash aptrequired.sh
     - [ ]  SpaCy 相似度比對
         - [x] [假新聞比對](./utils/similar.py)
         - [ ] 真新聞比對
-    - [ ] (備案) 假新聞辨識模型
+        - [ ] 比對加速
+    - [x] (備案) 假新聞辨識模型 (無中文版)
 - Crawl
     - [x] 爬取新聞資料
     - [x] 自動爬取新增資料

@@ -25,11 +25,12 @@ def upload_image():
             image.save(path)
             txt = tesseract.ocr(path)
             print(txt)
-            return txt
-    return render_template("upload.html")
+            return render_template('upload.html',value=str(txt))
+    return render_template("upload.html",value="")
 
 # 執行該檔案時所開啟的網址
 if __name__ == '__main__':
+    # app.debug = True # hot reload with this Line(excute as Python File)
     # app.run(host = '0.0.0.0', port = 5000) 
     HOST = os.environ.get('SERVER_HOST', 'localhost')
     try:
