@@ -30,11 +30,12 @@ bash aptrequired.sh
         - [x] [假新聞比對](./utils/similar.py)
         - [ ] 真新聞比對
         - [ ] 比對加速
+        - [ ] 與資料庫中資料做對比
     - [x] (備案) 假新聞辨識模型 (無中文版)
 - Crawl
     - [x] 爬取新聞資料
     - [x] 自動爬取新增資料
-    - [ ] 將爬取資料匯入資料庫且固定IP
+    - [x] 將爬取資料匯入資料庫
 - Deploy
     - [x] [UWSGI 部屬](./uwsgi.ini)
     - [x] [Nginx 反向代理](./nginxsetting.txt)
