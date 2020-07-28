@@ -27,6 +27,17 @@ def upload_image():
             print(txt)
             return render_template('upload.html',value=str(txt))
     return render_template("upload.html",value="")
+# for api
+@app.route('/api/upload', methods=["GET", "POST"])
+def upload():
+    if request.method == "POST":
+        if request.files:
+            image = request.files["image"]
+            path = os.path.join(app.config["IMAGE_UPLOADS"], "image",image.filename)
+            image.save(path)
+            txt = tesseract.ocr(path)
+            print(txt)
+            return txt
 
 # 執行該檔案時所開啟的網址
 if __name__ == '__main__':
