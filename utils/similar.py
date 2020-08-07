@@ -62,7 +62,7 @@ def cofactapi(news):
     data = json.loads(r.text)
     label = data['data']["ListArticles"]['edges'][0]['node']['articleReplies'][0]['reply']['type']
     if label == 'RUMOR': return('FakeNews')
-    elif label == 'NOT_RUMOR': return('Truth')
+    elif label == 'NOT_RUMOR': return('truenews')
 
 if __name__ == "__main__":
     # 單檔測試文本

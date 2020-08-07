@@ -84,7 +84,7 @@
         {% else %}
         <div class="banner-goal" id="check">
             <p class="label-title">結果: {{ value }}</p>
-            {% if value == "FakeNews" %} 假新聞確定 {% elif value == "Undefined" %} 未確認 {% endif %}
+            {% if value == "FakeNews" %} 假新聞確定 {% elif value == "Undefined" %} 未確認 {% elif value == "truenews" %} 非假新聞可能是真新聞 {% endif %}
         </div>
 
         {% endif %}
