@@ -2,9 +2,10 @@
 This script runs the application using a development server.
 It contains the definition of routes and views for the application.
 """
+import os, io
+from PIL import Image 
+from flask import Flask, render_template, request
 
-from flask import Flask, render_template, request, redirect
-import os
 from utils import tesseract # utils 資料夾中 tesseract.py
 app = Flask(__name__)
 
@@ -20,10 +21,9 @@ app.config["IMAGE_UPLOADS"] = os.path.dirname(__file__)
 def upload_image():
     if request.method == "POST":
         if request.files:
-            image = request.files["image"]
-            path = os.path.join(app.config["IMAGE_UPLOADS"], "image",image.filename)
-            image.save(path)
-            txt = tesseract.ocr(path)
+            image = request.files["image"].read()
+            image = Image.open(io.BytesIO(image))
+            txt = tesseract.ocr(image)
             print(txt)
             return render_template('upload.html',value=str(txt))
     return render_template("upload.html",value="")
@@ -32,10 +32,9 @@ def upload_image():
 def upload():
     if request.method == "POST":
         if request.files:
-            image = request.files["image"]
-            path = os.path.join(app.config["IMAGE_UPLOADS"], "image",image.filename)
-            image.save(path)
-            txt = tesseract.ocr(path)
+            image = request.files["image"].read()
+            image = Image.open(io.BytesIO(image))
+            txt = tesseract.ocr(image)
             print(txt)
             return txt
 
