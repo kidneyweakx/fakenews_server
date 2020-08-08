@@ -40,7 +40,7 @@ def upload():
 
 # 執行該檔案時所開啟的網址
 if __name__ == '__main__':
-    app.debug = True # hot reload with this Line(excute as Python File)
+    # app.debug = True # hot reload with this Line(excute as Python File)
     # app.run(host = '0.0.0.0', port = 5000) 
     HOST = os.environ.get('SERVER_HOST', 'localhost')
     try:
