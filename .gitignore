@@ -342,6 +342,7 @@ healthchecksdb
 # Enviroment and Setting config
 .vscode
 venv/
+.env
 
 # User upload images place
 image/*
