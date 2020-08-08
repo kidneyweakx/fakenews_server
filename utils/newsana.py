@@ -1,12 +1,24 @@
-import time
-import jieba.posseg as pseg
+import os
+from dotenv import load_dotenv, find_dotenv
+import jieba.analyse
+import pymysql
 
 def ana(txt):
-    start = time.time()
-    words = pseg.cut(txt)
-    for w in words: print(w.word, w.flag)
-    return('---%f time---' %(time.time()-start))
-     
+    load_dotenv(find_dotenv())
+    db_host = os.environ.get("DB_HOST")
+    db_port = os.environ.get("DB_PORT")
+    db_user = os.environ.get("DB_USER")
+    db_pass = os.environ.get("DB_PASS")
+    conn = pymysql.connect(host=db_host, port=int(db_port), user=db_user, passwd=db_pass, db='newsdata', charset='utf8')
+    kw = jieba.analyse.textrank(txt, topK=20, withWeight=True, allowPOS=('ns', 'n', 'vn', 'v'))    
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM newsdata WHERE content LIKE '%s'"%('%'+kw[0][0]+'%'))
+    data = cursor.fetchall()
+    label = data[0][1]
+    if label == '__label__fake': return('FakeNews')
+    elif label == '__label__undefined': return('Undefined')
+    elif label == '__label__true': return('truenews')
+    return('UNKNOWN')
 
 
 
