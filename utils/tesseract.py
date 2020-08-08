@@ -5,7 +5,7 @@ from utils import similar # Utils資料夾中similar.py
 
 # tesseract 安裝路徑 (Windows/Linux 問題)
 # pytesseract.pytesseract.tesseract_cmd = 'D:\\Program Files\\Tesseract-OCR\\tesseract.exe'
-pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = '‪‪D:\\Software\\Tesseract-OCR\\tesseract.exe'
 
 def ocr(img):
     # 執行OCR
