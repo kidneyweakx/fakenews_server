@@ -1,8 +1,6 @@
 import os
 import spacy
 import pandas as pd
-import requests
-import json
 
 def classifier(text) :
     # 將爬蟲資料csv路徑加入
@@ -29,42 +27,7 @@ def classifier(text) :
 
     return('UNKNOWN')
 
-def cofactapi(news):
-    news = '"' + news + '"'
-    query = """query {
-    ListArticles(
-        filter: { moreLikeThis: { like: %s } }
-            orderBy: [{ _score: DESC }]
-        first: 3
-        ) {
-        edges {
-            node {
-            # id
-            text
-            #hyperlinks {
-            #    url
-            #}
-        articleReplies {
-            reply {
-                #id
-                text
-                type
-                reference
-            }
-            }
-            }
-        }
-    }
-    }"""%(news)
-    url = "https://cofacts-api.g0v.tw/graphql"
-    r = requests.post(url, json={'query': query})
-    r.encoding = 'utf-8'
-    data = json.loads(r.text)
-    label = data['data']["ListArticles"]['edges'][0]['node']['articleReplies'][0]['reply']['type']
-    if label == 'RUMOR': return('FakeNews')
-    elif label == 'NOT_RUMOR': return('truenews')
 
 if __name__ == "__main__":
     # 單檔測試文本
     print(classifier('楊梅是皮蛇（帶狀皰疹）的尅星...10分鐘驗完血後，女醫生確定是得了帶狀皰疹...吃了兩天的楊梅後，居然神經不痛康復了'))
-    print(cofactapi("楊梅是皮蛇（帶狀皰疹）的尅星...10分鐘驗完血後，女醫生確定是得了帶狀皰疹...吃了兩天的楊梅後，居然神經不痛康復了"))

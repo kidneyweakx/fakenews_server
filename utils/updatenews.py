@@ -60,9 +60,9 @@ def createDataFrame(title, u, df, c):
 
 #append content to list
 def addC(t): 
-    temp = []
+    temp = ''
     for p in t:
-        temp.append(p.text.strip())
+        temp+= p.text.strip()
     content_list.append(temp)
 
 #output file
@@ -99,6 +99,8 @@ def getSource():
 
         if next_link == None:
             flag = False
+        elif debug == True:
+            flag= False
         else:
             next_url = "https://tfc-taiwan.org.tw" + next_link["href"]
             fake_URL = next_url
@@ -113,6 +115,8 @@ def getSource():
         
         if next_link == None:
             flag = False
+        elif debug == True:
+            flag= False
         else :
             next_url = next_link["href"]
             undefined_URL = next_url
@@ -122,6 +126,8 @@ def getSource():
     output(dataframe, 'csv')
 
 if __name__ == '__main__':
+    global debug 
+    debug = True
     getSource()
     del content_list[:]
     print("Successfully")
