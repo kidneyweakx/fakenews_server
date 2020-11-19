@@ -41,7 +41,12 @@
         };
     </script>
 </head>
-
+<style>
+.custom-file-label,
+.custom-file-label::after {
+    height: 110%;
+}
+</style>
 <body>
     <!-- header -->
     <!-- navigation bar -->
@@ -67,8 +72,8 @@
                 <form class="md-form" action="/upload" method="POST" enctype="multipart/form-data">
                     <div class="text-center"><h1>選擇檔案</h1></div>
                     <div class="custom-file">
-                        <input onchange="showFilename(this.files[0])" type="file" name="image" class="custom-file-input" id="customFile" required>
-                        <label id="filename_label" class="custom-file-label" for="customFile">jpg/png</label>
+                        <input onchange="showFilename(this.files[0])" type="file" name="image" class="custom-file-input form-control-lg" id="customFile" required>
+                        <label id="filename_label" class="custom-file-label custom-file-lg" for="customFile">jpg/png</label>
                     </div>
                     <div class="row justify-content-center">
                         <button type="submit" class="btn btn-primary">上傳檔案</button>
