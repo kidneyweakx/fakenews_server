@@ -18,108 +18,119 @@
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- CSS theme -->
     <link href="static/default.css" rel="stylesheet" type="text/css" media="all" />
     <!-- AOS - Animate on scroll library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 
     <!-- Navbar color changed -->
     <script>
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             $('nav').toggleClass('scrolled', $(this).scrollTop() > 200);
             $('nav a').toggleClass('scrolled', $(this).scrollTop() > 200);
-        });
-        
+        });      
     </script>
 </head>
 
 <body>
+    <!-- Back to top button -->
+
     <!-- header -->
     <!-- navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-black fixed-top shadow navbar-cc">
-        <a class="navbar-brand" href="/">FakeNews</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDiv" aria-controls="navbarDiv" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-black fixed-top shadow navbar-cc" role="banner">
+        <a class="navbar-brand" href="/">DAGEIHO - Anfa WEB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDiv"
+            aria-controls="navbarDiv" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarDiv">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a class="nav-item nav-link" href="/upload">辨識假新聞</a>
+                    <a class="nav-link nav-link-ltr" href="/upload">辨識假新聞</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a class="nav-item nav-link" href="#how">如何運作</a>
+                    <a class="nav-link nav-link-ltr" href="#product">產品介紹</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a class="nav-item nav-link" href="#goal">目標</a>
+                    <a class="nav-link nav-link-ltr" href="#goal">目標</a>
                 </li>
                 <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                    <a class="nav-item nav-link" href="#about">關於我們</a>
+                    <a class="nav-link nav-link-ltr" href="#about">關於我們</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    
-    <!-- Intro -->
-    <div class="banner-black" id="Intro">
+    <!-- Banner -->
+    <div class="banner-blackx" id="Intro">
         <div class="container">
             <div class="col">
-                <img class="rounded mx-auto d-block" src="static/favicon-96x96.png" 
-                style="max-width: 100%;height: auto;">
-            
+                <img class="rounded mx-auto d-block" src="static/favicon-96x96.png"
+                    style="max-width: 100%;height: auto;">
             </div>
-            <div style="font-size: 150%;">
-                <p class="text-center font-weight-bol">杜絕假新聞的散播<br>是我們努力的方向</p>
-            </div>
-        </div>
-        <!-- How to use -->
-        <div class="banner-white" id="how">
-            <div class="container">
-                <div class="row justify-content-start" data-aos="fade-right" data-aos-duration="3000">
-                    <h1>如何運作</h1>
-                </div>
-                <div class="row justify-content-center text-center" data-aos="fade-up-left" data-aos-duration="3000">
-                    <div class="col-6 col-md-4">
-                        <img class="rounded mx-auto d-block" src="static/logo/logo1.png"
-                        alt="Responsive image">
-                        <p text-center font-weight-bol>> 樹莓派物聯網裝置  </p>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <img class="rounded mx-auto d-block" src="static/logo/logo2.png"
-                        alt="Responsive image">
-                        <p text-center font-weight-bol>> 網頁前端  </p>
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-6 col-md-4">
-                        <img class="rounded mx-auto d-block" src="static/logo/logo3.png"
-                        alt="Responsive image">
-                        <p>> 手機應用程式  </p>
-                    </div>
-                    <div class="col-6 col-md-4">
-                        <img class="rounded mx-auto d-block" src="static/logo/logo4.png"
-                        alt="Responsive image" >
-                        <p>> 伺服器後端   </p>
-                    </div>
+            <div class="col" style="font-size: 300%;">
+                <br>
+                <h1 class="text-center font-weight-bol">Anfa在手，<br>
+                    即可釐清新訊息的真假。</h1>
+                <br><br><br>
+                <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="3000">
+                    <a class="btn btn-primary btn-lg" href="/upload" role="button">立刻辨識新聞</a>
                 </div>
             </div>
         </div>
-    
+    </div>
+
+    <!-- How to use -->
+    <div class="banner-white" id="product">
+        <div class="container">
+            <div class="row justify-content-start" data-aos="fade-down" data-aos-duration="3000">
+                <h1>產品介紹</h1>
+            </div><br><br><br>
+            <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-duration="3000">
+                <div class="col-6 col-md-4">
+                    <img class="rounded mx-auto d-block" src="static/resources/logo1.png" alt="Responsive image">
+                    <p text-center font-weight-bol>Anfa<br>樹莓派物聯網裝置 </p>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img class="rounded mx-auto d-block" src="static/resources/logo2.png" alt="Responsive image">
+                    <p text-center font-weight-bol>Anfa Web<br> 網頁前端 </p>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-6 col-md-4">
+                    <img class="rounded mx-auto d-block" src="static/resources/logo3.png" alt="Responsive image">
+                    <p>Anfa Mobile<br>手機應用程式 </p>
+                </div>
+                <div class="col-6 col-md-4">
+                    <img class="rounded mx-auto d-block" src="static/resources/logo4.png" alt="Responsive image">
+                    <p>Anfa Server<br> 伺服器後端 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Goal -->
     <div class="banner-black" id="goal">
         <div class="container">
-            <div class="row justify-content-start" data-aos="fade-right" data-aos-duration="3000">
+            <div class="row justify-content-start" data-aos="fade-down" data-aos-duration="3000">
                 <h1>目標</h1>
-            </div>
-            <div class="row justify-content-center" data-aos="fade-up-left" data-aos-duration="3000">
-                <p>杜絕假新聞的散播</p>
-            </div>
-            <div class="row justify-content-center" data-aos="fade-up-left" data-aos-duration="3000">
+            </div><br><br>
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="3000">
+                <p>杜絕假新聞的散播<br>智慧穿戴裝置的「可攜性」解決媒體亂象</p>
+            </div><br><br>
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="3000">
                 <img src="static/goal.png">
             </div>
         </div>
@@ -130,45 +141,48 @@
         <div class="container">
             <div class="row justify-content-center" data-aos="fade-down" data-aos-duration="3000">
                 <h1>關於我們</h1>
-            </div>
+            </div><br>
             <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="3000">
-                 <p>我們是來自中山大學資訊管理學系的學生</p>
-            </div> 
+                <p>我們是來自中山大學資訊管理學系的學生</p>
+            </div>
             <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-duration="3000">
-                <div class="col-6 col-md-4">
+                <div class="col-6 col-md-4 col-xl-2">
                     <a href="https://github.com/seanchungx">
                         <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/55488209?s=460&v=4">
                     </a>
                 </div>
-                <div class="col-6 col-md-4">
+                <div class="col-6 col-md-4 col-xl-2">
                     <a href="https://github.com/Yawen2-1-1">
                         <img class="rounded-circle" src="https://avatars3.githubusercontent.com/u/62700679?s=460&v=4">
                     </a>
                 </div>
-                <div class="col-6 col-md-4">
+                <div class="col-6 col-md-4 col-xl-2">
                     <a href="https://github.com/wenchienlu">
                         <img class="rounded-circle" src="https://avatars1.githubusercontent.com/u/62700676?s=460&v=4">
                     </a>
                 </div>
             </div>
             <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-duration="3000">
-                <div class="col-6 col-md-4">
+                <div class="col-6 col-md-4 col-xl-2">
                     <a href="https://github.com/zexon7">
-                        <img class="rounded-circle" src="https://avatars1.githubusercontent.com/u/59526754?s=460&u=6ee00a9300f8358fe4bae79b6887a377afc953f4&v=4">
+                        <img class="rounded-circle"
+                            src="https://avatars1.githubusercontent.com/u/59526754?s=460&u=6ee00a9300f8358fe4bae79b6887a377afc953f4&v=4">
                     </a>
                 </div>
-                <div class="col-6 col-md-4">
+                <div class="col-6 col-md-4 col-xl-2">
                     <a href="https://github.com/kidneyweakx">
-                        <img class="rounded-circle" src="https://avatars2.githubusercontent.com/u/35759909?s=460&u=a4f41c4db45da79dd6760d4b6aa0018b60342965&v=4">
+                        <img class="rounded-circle"
+                            src="https://avatars2.githubusercontent.com/u/35759909?s=460&u=a4f41c4db45da79dd6760d4b6aa0018b60342965&v=4">
                     </a>
                 </div>
             </div>
-       </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+        AOS.init();
+
     </script>
 
 </body>
@@ -180,7 +194,7 @@
         <div class="row justify-content-center text-center">
             <p>@Copyright 2020</p>
         </div>
-    </div> 
+    </div>
 
 </footer>
 
