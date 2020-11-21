@@ -9,7 +9,7 @@ pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 def ocr(img):
     # 執行OCR
-    text = pytesseract.image_to_string(img, lang='chi_tra')
+    text = pytesseract.image_to_string(img, lang='chi_tra').replace("\n", "")
     print('tesseract text :',text)
     # 運用Similar.py 中的 classifier 函式辨識假新聞
     # truth=similar.classifier(text)
